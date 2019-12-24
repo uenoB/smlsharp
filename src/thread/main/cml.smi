@@ -1,12 +1,12 @@
-_require "../../basis.smi"
-_require local "./myth.smi"
-_require local "./concurrent.smi"
+_require local "../../basis.smi"
+_require local "./Myth.smi"
+_require local "./Concurrent.smi"
 
 structure CML =
 struct
-  type thread_id (= boxed)
-  type 'a chan (= boxed)
-  type 'a event (= boxed)
+  type thread_id (= ref)
+  type 'a chan (= {})
+  type 'a event (= {})
 
   (*
     val version : {system : string, version_id : int list, date : string}

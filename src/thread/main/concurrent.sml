@@ -1,3 +1,8 @@
+(**
+ * Utilities for concurrency
+ * @author UENO Katsuhiro
+ * @copyright (c) 2017 Tohoku University
+ *)
 structure Concurrent =
 struct
 

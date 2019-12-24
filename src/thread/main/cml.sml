@@ -8,7 +8,7 @@
 structure CML =
 struct
 
-  structure Cond = Myth.Cond
+  (* structure Cond = Myth.Cond *)
   structure Mutex = Myth.Mutex
   structure Thread = Concurrent.Thread
   structure Ivar = Concurrent.Ivar

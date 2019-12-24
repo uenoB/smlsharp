@@ -1,21 +1,22 @@
-_require "../../basis.smi"
+_require local "../../basis.smi"
 
 structure Myth =
 struct
 
-  type thread (= boxed)
+  type thread (= *)
   structure Thread =
   struct
     type thread = thread
     val create : (unit -> int) -> thread
     val detach : thread -> unit
     val join : thread -> int
+    val exit : int -> unit
     val yield : unit -> unit
     val self : unit -> thread
     val equal : thread * thread -> bool
   end
 
-  type mutex (= boxed)
+  type mutex (= array)
   structure Mutex =
   struct
     type mutex = mutex
@@ -26,7 +27,7 @@ struct
     val destroy : mutex -> unit
   end
 
-  type cond (= boxed)
+  type cond (= array)
   structure Cond =
   struct
     type cond = cond
@@ -37,7 +38,7 @@ struct
     val destroy : cond -> unit
   end
 
-  type barrier (= boxed)
+  type barrier (= array)
   structure Barrier =
   struct
     type barrier = barrier
